@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {color: white; background-color:#222222;height=100%;width=100%}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    top: 0;
+    left:0;
+    width:100%;
+    border-radius:25px;
+
+}
+
+
+li {
+    float: left;
+    border-radius:25px;
+}
+
+li a,input {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    line-height: 25px;
+    text-decoration: none;
+}
+
+
+a:hover {
+    background-color: #111;
+    border-radius:25px;
+}
+
+.active {
+background-color:#206060;
+}
+.inactive{background-color:inherit;}
+ul.topnav li.right{float: right;}
+@media screen and (max-width: 700px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
+</style>
+<body>
+<div id="navbar">
+    <ul class="topnav">
+        <li class="active" style="font-size:30px" value="1" > <a href="#" onclick="javascript:openTab('Home','1')"> Home</a></li>
+        <li value="2"><a href="#" onclick="javascript:openTab('About Me','2')"> About Me</a></li>
+        <li value="3"><a href="#" onclick="javascript:openTab('Resume','3')"> Resume</a></li>
+        <li value="4"><a href="#" onclick="javascript:openTab('Contact Me','4')"> Contact Me</a></li>
+        <li class="right" value="5" style="height:auto"><input type="search" placeholder="Search" style="color:black; text-align:left;border-radius:30px;background-color:white;line-height:0px" href="www.google.com"></input></li>
+
+    </ul>
+</div>
+
+<div id="Home" class="tab">
+    <p> This is home </p>
+</div>
+
+<div id="About Me" class="tab" style="display:none">
+  <h2> Things I enjoy in my free time:</h2>
+  <li class="enjoy"> Hiking and camping </li>
+</div>
+
+<div id="Resume" class="tab" style="display:none">
+  <p>I am ok at some computer stuff, I think.</p>
+</div>
+
+<div id="Contact Me" class="tab" style="display:none; ">
+<p> Here are some other places to reach me: </p><a href="https://www.linkedin.com/in/andrew-kubiak-63006959/" target="_blank"><img src="LinkedIn_logo_initials.png" width="100px" height="100px"></a> &emsp; &emsp;  <a href="https://www.facebook.com/andrew.kubiak.982" target="_blank"><img src="facebook_logo.jpg" width="auto" height="100px"></a> <br> <br> <a href="https://twitter.com/A_Wild_Kubiak" target="_blank"><img src="twitter_logo.svg" height="100px" width="auto"></a>
+</div>
+
+
+<script>
+function openTab(tabName,num){
+    var list = document.getElementById("navbar").getElementsByTagName("li");
+    for (var i = 0; i <list.length;i++) {
+        if (list[i].value <=4) {
+            list[i].className="inactive";
+            if (list[i].value == num)
+                {list[i].className="active"}
+        }   
+    }
+    var x = document.getElementsByClassName("tab");
+    for (var i = 0; i < x.length; i++) {
+        x[i].style.display ="none";
+    }
+    document.getElementById(tabName).style.display="block";
+}
+</script>
+
+
+</body>
+</html>
