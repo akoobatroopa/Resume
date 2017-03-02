@@ -30,6 +30,6 @@ a:link {color:GhostWhite;}
  
 
 
-	<iframe src="Home" style="position:fixed; height:100%; width:99%; border:0"  type=text/html> </iframe>
+	<embed src="Home" style="position:fixed; height:100%; width:99%; border:0"  type=text/html> </embed>
 </body>
 </html>
