@@ -11,8 +11,50 @@
 <style>
 body {color: white; background-color:#111111;margin:0;height:100%;width:100%;display:inline-block;}
 
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    list-style-type: none;
+
+    position: fixed;
+    display: inline-block;
+    z-index:20;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    color:black;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    background-color:gray;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;color:black;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #549387;
+}
+
 .top-wrapper{
-	background-image:url('flower.jpg');	
+	background-color:#000000;	
 	position:fixed;
 	width:100%;
 	top:0;
@@ -27,6 +69,7 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 	margin-top:0;
 	position:static;
 	overflow:hidden;
+	z-index:1;
 }
 
 #About{
@@ -47,30 +90,61 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 	overflow:hidden;
 	width:100%;
 	margin:10;
-
 }
 
-.counter {
-  width: 20px;
-  height: 20px;
-  background: black;
-  color: #fff;
-  position: fixed;
-  top: 120px;
-  right: 0;
-}
-.navbar {
+#navbar {
     list-style-type: none;
-    margin:0;
+    margin-top:-5px;
     padding: 0;
     overflow: hidden;
     /*background-color: #333*/;
     width:100%;
-   	display:block;
+   	display:inline-block;
    	transition-duration: .5s;
- 	
 }
 
+.collapse-bar {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	width:100%;
+	display:inline-block;
+	transition-duration:.5s;
+}
+
+.collapse-item {
+	margin-top:0;
+	display:block;
+}
+.hidden {
+	display:none;
+}
+
+.visible {
+	list-style-type: none;
+    margin-top:-5px;
+    padding: 0;
+    overflow: hidden;
+    /*background-color: #333*/;
+    width:100%;
+   	display:inline-block;
+   	transition-duration: .5s;
+}
+.hidden-nav {
+	display:none;
+}
+
+.visible-nav {
+	list-style-type: none;
+    margin-top:-5px;
+    padding: 0;
+    overflow: hidden;
+    /*background-color: #333*/;
+    width:100%;
+   	display:inline-block;
+   	transition-duration: .5s;
+}
 .scrolled-nav {
 	background-color:#222 !important;
 	background-image:none !important;
@@ -94,25 +168,47 @@ a.directory:link:active, a:visited:active {
 	color:default;
 }
 
+
+
 </style>
 </head>
 
 
 <body>
 <nav class="top-wrapper">
-	<ul class="navbar">
-		<li id=navbar-item style="float:left;font-size:40px;"><a class="directory" href="index.html">Andrew Kubiak <br> <span style="font-size:15px;">Quiet Passion. Creative Solutions.</span></a></li>
-		<li id=navbar-item name ="contact"><br><a class="directory" href="#Contact">Contact Me</a></li>
-		<li id=navbar-item name ="experience"><br><a class="directory" href="#Experience">Experience</a></li>
-		
-		<li id=navbar-item name="projects"><a class="directory" href="#Projects"><br>Projects</a></li>
-		<li id=navbar-item name="about"><a class="directory" href="#About"><br>About Me</li>
-		<li id=navbar-item name="home"><a class="directory"  href="#Home"><br>Home</a></li>		
-	</ul>
+	<div class="container-fluid">
+		<div id=navbar-norm class="navbar-norm visible-nav">
+			<ul id="navbar" class="navbar">
+				<li id=navbar-item style="float:left;font-size:40px;line-height:10px"><a class="directory" href="index.html"><br><br>Andrew Kubiak <br> <span style="font-size:15px;"><br>Quiet Passion. Creative Solutions.</span></a></li>
+				<li id=navbar-item name ="contact"><br><a class="directory" href="#Contact">Contact Me</a></li>
+				<li id=navbar-item name ="experience"><br><a class="directory" href="#Experience">Experience</a></li>
+				
+				<li id=navbar-item name="projects"><a class="directory" href="#Projects"><br>Projects</a></li>
+				<li id=navbar-item name="about"><a class="directory" href="#About"><br>About Me</a></li>
+				<li id=navbar-item name="home"><a class="directory"  href="#Home"><br>Home</a></li>		
+			</ul>
+		</div>
+
+		<div class="collapse hidden dropdown visible" id="myNavbar">
+			<ul class=collapse-bar>
+				<li id=collapse-item><a style="text-decoration:none" href="index.html">Andrew Kubiak </a></li>
+				<li id=collapse-item>
+					<button style="float:right;margin-top:0" class="dropbtn navbar-item">Menu</button>
+					<div class="dropdown-content">
+						<a href="#Home">Home</a>
+						<a href="#About">About Me</a>
+						<a href="#Projects">Projects</a>
+						<a href="#Experience">Experience</a>
+						<a href="#Contact">Contact Me</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>
 
 <div id="Home">
-<img src="flower.jpg" style="object-fit:inherit;max-width:100%;min-height:120vh;min-height:100%" >
+<img src="flower.jpg" style="max-width:100%; margin:0 auto; overflow:hidden;" >
 </div>
 
 
@@ -135,40 +231,75 @@ a.directory:link:active, a:visited:active {
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script>
 $(document).ready(function(){
-	var scrollTop=0;
+	var scrollTop;
+	var navbar=$(".navbar-norm");
   $(window).scroll(function(){
     scrollTop = $(window).scrollTop();
 
-    navbar = $(".navbar");
-    
     if (scrollTop >= 10) {
       navbar.addClass("scrolled-nav");
+
     } else if (scrollTop < 10) {
       navbar.removeClass("scrolled-nav");
     } 
   }); 
 
-  if(window.location.pathname+window.location.hash != '/index.html#Home') {
-  	var x = document.getElementsByClassName("directory");
-  	console.log(x);
-  }
-
 });
+	var navbar=$("#navbar-norm");
+	console.log(navbar);
+  	var collapse=$("#myNavbar");
+	if($(window).width() < 1008) {
+	  	navbar.addClass("hidden-nav");
+  		navbar.removeClass("visible-nav");
+  		collapse.addClass("visible");
+  		collapse.removeClass("hidden");
+  		console.log("shit");
+  	}
+  	else {
+  		navbar.addClass("visible-nav");
+  		navbar.removeClass("hidden-nav");
+  		collapse.addClass("hidden");
+  		collapse.removeClass("visible");
+  		  		console.log("shit i missed");
+
+  	}
+
 </script>
 <script>
+
+<!-- Listens for hashchange in order to readjust for the navigation bar -->
 window.addEventListener("hashchange", function () {
 	window.scrollTo(window.scrollX, window.scrollY - 80);
     
 },false);
+
+<!-- Makes it so when you click a link, you can't click the hash-redirect again -->
 window.addEventListener("popstate",function () {
 	window.scrollTo(window.scrollX, window.scrollY - 80);
 	window.URL = document.URL.substr(0,document.URL.indexOf('#'));
 	var x = 0;
 	history.pushState(x,"",window.URL);
 }, false);
+window.addEventListener("resize", function () {
+	var navbar=document.getElementById("navbar-norm");
+	console.log(navbar);
+  	var collapse=document.getElementById("myNavbar");
+	if($(window).width() < 1008) {
+	  	navbar.classList.add("hidden-nav");
+  		navbar.classList.remove("visible-nav");
+  		collapse.classList.add("visible");
+  		collapse.classList.remove("hidden");
+  		console.log("shit");
+  	}
+  	else {
+  		navbar.classList.add("visible-nav");
+  		navbar.classList.remove("hidden-nav");
+  		collapse.classList.add("hidden");
+  		collapse.classList.remove("visible");
+  		  		console.log("shit i missed");
 
-	
-
+  	}
+}, false);	
 </script>
 
 </body>
