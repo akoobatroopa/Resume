@@ -11,28 +11,28 @@
 body {color: white; background-color:#111111;margin:0;height:100%;width:100%;display:inline-block;}
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 0px;
+    font-size: 0px;
     border: none;
     cursor: pointer;
+    transition-duration:.6s;
 }
 
 .dropdown {
     list-style-type: none;
-
     position: fixed;
     display: inline-block;
     z-index:20;
 }
 
 .dropdown-content {
+
     display: none;
-    position: fixed;
+    position: relative;
     color:black;
     min-width: 160px;
-    z-index: 1;
 }
 
 .dropdown-content a {
@@ -42,14 +42,21 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;color:black;}
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+	color:black;
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
+    clear:right;
+    text-align:center;
+    float:none;
 }
 
-.dropdown:hover .dropbtn {
+.dropdown:focus .dropbtn {
     background-color: #549387;
+
 }
 
 .top-wrapper{
@@ -73,26 +80,25 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 
 .sections{
 	padding-top:0px;
-	min-height:110vh;
+	height:100vh;
 	position:static;
 	overflow:hidden;
 	width:100%;
 	top-margin:0px;
 	background-color:#111111;
-}
-.About{
+
 }
 
-
-.Projects{
-	padding-top:0px;
+.background-container {
+	width:100vw;
 	height:100vh;
-	background-image:url('galaxy_1.jpg');
-	position:static;
-	overflow:hidden;
-	width:100%;
-	margin:10;
+	background-position:center center; 
+	background-repeat:no-repeat;
+	background-size:auto 100%;
 }
+
+
+
 
 #navbar {
     list-style-type: none;
@@ -107,16 +113,34 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 
 .collapse-bar {
 	list-style-type:none;
-	margin:0;
+	margin-top:0;
 	padding:0;
 	overflow:hidden;
 	width:100%;
-	display:inline-block;
+	display:block;
 	transition-duration:.5s;
+	background-color:black;
+}
+.collapse-bar-scrolled {
+	list-style-type:none;
+	margin-top:0;
+	padding:0;
+	overflow:hidden;
+	width:100%;
+	display:block;
+	transition-duration:.5s;
+	background-color:#222 !important;
+}
+
+.collapse-drpbtn-scrolled {
+	background-color:#222 !important;
+	color:#222 !important;
+	transition-duration: .6s;
+
 }
 
 .collapse-item {
-	margin-top:0;
+	margin-top:100px;
 	display:block;
 }
 .hidden {
@@ -159,7 +183,7 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 
 
 #navbar-item {
-	font-size:20px;
+	font-size:17px;
 	margin:20px;
 	display:inline-block;
 	float:right;
@@ -175,7 +199,6 @@ a.directory:link:active, a:visited:active {
 }
 
 
-
 </style>
 </head>
 
@@ -185,7 +208,7 @@ a.directory:link:active, a:visited:active {
 	<div class="container-fluid">
 		<div id=navbar-norm class="navbar-norm hidden-nav">
 			<ul id="navbar" class="navbar">
-				<li id=navbar-item style="float:left;font-size:40px;line-height:10px"><a class="directory" href="index.html"><br><br>Andrew Kubiak <br> <span style="font-size:15px;"><br>Quiet Passion. Creative Solutions.</span></a></li>
+				<li id=navbar-item style="float:left;font-size:25px;line-height:10px"><a class="directory" href="index.html"><br><br>Andrew Kubiak <br> <span style="font-size:15px;"><br>Quiet Passion. Creative Solutions.</span></a></li>
 				<li id=navbar-item name ="contact"><br><a class="directory" href="#Contact">Contact Me</a></li>
 				<li id=navbar-item name ="experience"><br><a class="directory" href="#Experience">Experience</a></li>
 				
@@ -195,12 +218,12 @@ a.directory:link:active, a:visited:active {
 			</ul>
 		</div>
 
-		<div class="collapse hidden dropdown hidden" id="myNavbar">
+		<div class="collapse hidden dropdown" id="myNavbar">
 			<ul class=collapse-bar>
-				<li id=collapse-item><a style="text-decoration:none" href="index.html">Andrew Kubiak </a></li>
+				<li id=collapse-item style="margin-top:20px;margin-left:5px"><a style="text-decoration:none;font-size:40px;line-height:10px" href="index.html">Andrew Kubiak<span style="font-size:15px;"><br>Quiet Passion. Creative Solutions.</span></a></li>
 				<li id=collapse-item>
-					<button style="float:right;margin-top:0" class="dropbtn navbar-item">Menu</button>
-					<div class="dropdown-content">
+					<button style="float:right;margin-top:-60px;margin-right:-5px" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px"></button>
+					<div tabindex="0" class="dropdown-content">
 						<a href="#Home">Home</a>
 						<a href="#About">About Me</a>
 						<a href="#Projects">Projects</a>
@@ -229,17 +252,19 @@ a.directory:link:active, a:visited:active {
   		collapse.classList.remove("visible");
   	}
 </script>
-<div id="Home">
-<img src="flower.jpg" style="max-width:100%; margin:0 auto; overflow:hidden;" >
+
+
+<div id="Home" class="background-container" style="background-image:url('flower.jpg');background-color:black">
+
 </div>
 
 
-<div class="main">
 <section id="About" class="sections About">
 <h1> Hi. How is it going?</h1>
 </section>
 
-<section id="Projects" class="sections Projects">
+
+<section id="Projects" class="sections Projects" style="background-color:#002e2e">
 <h2>This is what I do in my free time.</h2>
 </section>
 
@@ -247,24 +272,30 @@ a.directory:link:active, a:visited:active {
 <h2>Experience</h2>
 </section>
 
-<section id="Contact" class="sections Contact">
+<section id="Contact" class="background-container sections Contact" style="background-image:url('galaxy_1.jpg');background-size:auto auto">
 <h2>Contact me</h2>
 </section>
 </div>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script>
 $(document).ready(function(){
 	var scrollTop;
 	var navbar=$(".navbar-norm");
+	var collapse=$(".collapse-bar");
+	var drpbtn=$(".dropbtn");
+	console.log(drpbtn)
   $(window).scroll(function(){
     scrollTop = $(window).scrollTop();
 
     if (scrollTop >= 10) {
       navbar.addClass("scrolled-nav");
-
+      collapse.addClass("collapse-bar-scrolled");
+      drpbtn.addClass("collapse-drpbtn-scrolled");
     } else if (scrollTop < 10) {
       navbar.removeClass("scrolled-nav");
+      collapse.removeClass("collapse-bar-scrolled");
+      drpbtn.removeClass("collapse-drpbtn-scrolled");      
     } 
   }); 
 
@@ -289,7 +320,7 @@ window.addEventListener("popstate",function () {
 window.addEventListener("resize", function () {
 	var navbar=document.getElementById("navbar-norm");
   	var collapse=document.getElementById("myNavbar");
-	if($(window).width() < 1008) {
+	if(document.body.clientWidth < 1008) {
 	  	navbar.classList.add("hidden-nav");
   		navbar.classList.remove("visible-nav");
   		collapse.classList.add("visible");
