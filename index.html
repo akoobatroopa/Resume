@@ -186,8 +186,8 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 }
 
 a.active-bar {
-	color:#3366cc;
-	transition-duration:.5s;
+	color:#3366cc !important;
+	transition-duration:.5s !important;
 }
 
 a.inactive-bar {
@@ -251,7 +251,7 @@ a.directory:link:active, a:visited:active {
 				
 				<li id=navbar-item name="projects"><a class="directory" href="javascript:hashredirect('Projects')"><br>Projects</a></li>
 				<li id=navbar-item name="about"><a class="directory" href="javascript:hashredirect('About')"><br>About Me</a></li>
-				<li id=navbar-item name="home"><a class="directory active-bar"  href="javascript:hashredirect('Home')"><br>Home</a></li>		
+				<li id=navbar-item name="home"><a class="directory"  href="javascript:hashredirect('Home')"><br>Home</a></li>		
 			</ul>
 		</div>
 
@@ -325,9 +325,9 @@ $(document).ready(function(){
 	var navbar=$(".navbar-norm");
 	var collapse=$(".collapse-bar");
 	var drpbtn=$(".dropbtn");
-  $(window).scroll(function(){
-    scrollTop = $(window).scrollTop();
 
+	$(window).scroll(function(){
+	scrollTop = $(window).scrollTop();
     if (scrollTop >= 10) {
       navbar.addClass("scrolled-nav");
       collapse.addClass("collapse-bar-scrolled");
@@ -409,7 +409,14 @@ window.addEventListener("scroll",function () {
 		changeActive(1);
 	}	
 });
+window.addEventListener("load",function () {
+	var navs = document.getElementsByClassName("directory");
+	var navs2 = document.getElementsByClassName("directory2");
+	console.log(navs2[0]);
+	navs2[0].style.color="black";
+	navs[5].style.color="#3366cc";
 
+});
 
 
 window.addEventListener("resize", function () {
