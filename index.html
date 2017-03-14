@@ -8,7 +8,7 @@
 
 <head>
 <style>
-body {color: white; background-color:#111111;margin:0;height:100%;width:100%;display:inline-block;}
+body {color: white; background-color:#111111;margin:0;height:100%;width:100%;display:inline-block;overflow-x:hidden;}
 
 .dropbtn {
     background-color: black;
@@ -24,7 +24,6 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
     list-style-type: none;
     position: fixed;
     display: inline-block;
-    z-index:20;
 }
 
 .dropdown-content {
@@ -32,14 +31,17 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
     display: none;
     position: relative;
     color:black;
-    min-width: 160px;
 }
 
 .dropdown-content a {
-    padding: 12px 16px;
+    padding: 6px 8px;
     text-decoration: none;
+    color:white;
     background-color:gray;
     display: block;
+    border:solid;
+    border-color:black;
+    border-width:.5px;
 }
 
 .dropdown-content a:hover {
@@ -47,7 +49,7 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 	color:black;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown .dropdown-content {
     display: block;
     clear:right;
     text-align:center;
@@ -76,6 +78,31 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 	position:static;
 	overflow:hidden;
 	z-index:1;
+}
+
+.home-buttons {
+	overflow:hidden;
+	position:absolute;
+	padding:10px;
+	color:white;
+	background-color:transparent;
+	border:2px;
+	border-color:white;
+	border-style:double;
+	z-index:0;
+	text-shadow: -1px -1px 0 1px -1px 0 -1px 1px 0 1px 1px 0;
+
+}
+
+.home-buttons:hover {
+	overflow:hidden;
+	border:2px;
+	padding:10px;
+	border-color:#787878;
+	border-style:solid;
+	background-color:#005fb3;
+	color:black;
+	transition-duration:.35s;
 }
 
 .sections{
@@ -140,7 +167,6 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 }
 
 .collapse-item {
-	margin-top:100px;
 	display:block;
 }
 .hidden {
@@ -150,12 +176,23 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 .visible {
 	list-style-type: none;
     margin-top:-5px;
-    padding: 0;
+    padding-top: 0;
+    background-color:;
     overflow: hidden;
     /*background-color: #333*/;
     width:100%;
    	display:inline-block;
    	transition-duration: .5s;
+}
+
+a.active-bar {
+	color:#3366cc;
+	transition-duration:.5s;
+}
+
+a.inactive-bar {
+	color:white;
+	transition-duration:.5s;
 }
 .hidden-nav {
 	display:none;
@@ -204,41 +241,40 @@ a.directory:link:active, a:visited:active {
 
 
 <body>
-<nav class="top-wrapper">
+<nav class="top-wrapper" style="z-index:100;">
 	<div class="container-fluid">
 		<div id=navbar-norm class="navbar-norm hidden-nav">
 			<ul id="navbar" class="navbar">
 				<li id=navbar-item style="float:left;font-size:25px;line-height:10px"><a class="directory" href="index.html"><br><br>Andrew Kubiak <br> <span style="font-size:15px;"><br>Quiet Passion. Creative Solutions.</span></a></li>
-				<li id=navbar-item name ="contact"><br><a class="directory" href="#Contact">Contact Me</a></li>
-				<li id=navbar-item name ="experience"><br><a class="directory" href="#Experience">Experience</a></li>
+				<li id=navbar-item name ="contact"><br><a class="directory" href="javascript:hashredirect('Contact')">Contact</a></li>
+				<li id=navbar-item name ="experience"><br><a class="directory" href="javascript:hashredirect('Experience')">Experience</a></li>
 				
-				<li id=navbar-item name="projects"><a class="directory" href="#Projects"><br>Projects</a></li>
-				<li id=navbar-item name="about"><a class="directory" href="#About"><br>About Me</a></li>
-				<li id=navbar-item name="home"><a class="directory"  href="#Home"><br>Home</a></li>		
+				<li id=navbar-item name="projects"><a class="directory" href="javascript:hashredirect('Projects')"><br>Projects</a></li>
+				<li id=navbar-item name="about"><a class="directory" href="javascript:hashredirect('About')"><br>About Me</a></li>
+				<li id=navbar-item name="home"><a class="directory active-bar"  href="javascript:hashredirect('Home')"><br>Home</a></li>		
 			</ul>
 		</div>
 
 		<div class="collapse hidden dropdown" id="myNavbar">
 			<ul class=collapse-bar>
-				<li id=collapse-item style="margin-top:20px;margin-left:5px"><a style="text-decoration:none;font-size:40px;line-height:10px" href="index.html">Andrew Kubiak<span style="font-size:15px;"><br>Quiet Passion. Creative Solutions.</span></a></li>
-				<li id=collapse-item>
-					<button style="float:right;margin-top:-60px;margin-right:-5px" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px"></button>
+				<li id=collapse-item style="margin-top:30px;margin-bottom:23px;margin-left:5px"><a style="text-decoration:none;font-size:40px;line-height:10px" href="index.html">Andrew Kubiak<span style="font-size:15px;"><br>Quiet Passion. Creative Solutions.</span></a></li>
+				<li id=collapse-item class="menu" style="visibility: visible;"><button style="float:right;margin-top:-70px;margin-right:-5px" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px" onclick="openMenu()"></button></li>
+				<li id=collapse-item class="menu" style="visibility:hidden; display:none">
+					<button style="float:right;margin-top:-70px;margin-right:-5px" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px" onclick="closeMenu()"></button>
 					<div tabindex="0" class="dropdown-content">
-						<a href="#Home">Home</a>
-						<a href="#About">About Me</a>
-						<a href="#Projects">Projects</a>
-						<a href="#Experience">Experience</a>
-						<a href="#Contact">Contact Me</a>
+						<a class="directory2 active" style="color:black" href="javascript:hashredirect('Home')" onclick="closeMenu()">Home</a>
+						<a class="directory2" href="javascript:hashredirect('About')" onclick="closeMenu()">About Me</a>
+						<a class="directory2" href="javascript:hashredirect('Projects')" onclick="closeMenu()">Projects</a>
+						<a class="directory2" href="javascript:hashredirect('Experience')" onclick="closeMenu()">Experience</a>
+						<a class="directory2" href="javascript:hashredirect('Contact')" onclick="closeMenu()">Contact</a>
 					</div>
 				</li>
 			</ul>
 		</div>
 	</div>
-</nav>
-<script type='text/javascript'>
+	<script type='text/javascript'>
 	var navbar=document.getElementById('navbar-norm');
 	var collapse=document.getElementById('myNavbar');
-	console.log(navbar)
 	if($(window).width() < 1008) {
 	  	navbar.classList.add("hidden-nav");
   		navbar.classList.remove("visible-nav");
@@ -251,11 +287,16 @@ a.directory:link:active, a:visited:active {
   		collapse.classList.add("hidden");
   		collapse.classList.remove("visible");
   	}
-</script>
+	</script>
+</nav>
 
 
-<div id="Home" class="background-container" style="background-image:url('flower.jpg');background-color:black">
 
+<div id="Home" class="background-container" style="background-image:url('flower.jpg');background-color:black;position:static">
+<div style="display:block;">
+<a href="javascript:hashredirect('About')"><button class="home-buttons" style="text-align:center;left:20%;top:50%;" >About Me</button></a>
+<a href="javascript:hashredirect('Contact')"><button class="home-buttons" style="float:right;right:20%;top:50%">Message Me</button></a>
+</div>
 </div>
 
 
@@ -272,11 +313,11 @@ a.directory:link:active, a:visited:active {
 <h2>Experience</h2>
 </section>
 
-<section id="Contact" class="background-container sections Contact" style="background-image:url('galaxy_1.jpg');background-size:auto auto">
-<h2>Contact me</h2>
+<section id="Contact" class="background-container sections Contact" style="background-image:url('galaxy_1.jpg');background-size:auto auto;height:85vh;">
+<h2>Enter stuff below in order to contact me</h2>
 </section>
-</div>
-
+<section class=sections style="display:none"> 
+</section>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -284,7 +325,6 @@ $(document).ready(function(){
 	var navbar=$(".navbar-norm");
 	var collapse=$(".collapse-bar");
 	var drpbtn=$(".dropbtn");
-	console.log(drpbtn)
   $(window).scroll(function(){
     scrollTop = $(window).scrollTop();
 
@@ -305,18 +345,73 @@ $(document).ready(function(){
 <script>
 
 <!-- Listens for hashchange in order to readjust for the navigation bar -->
-window.addEventListener("hashchange", function () {
-	window.scrollTo(window.scrollX, window.scrollY - 90);
-    
-},false);
+function hashredirect(loc) {
+	var el = getOffset(loc);
+	window.scrollTo(el.left,el.top - 90 );
+	history.replaceState(undefined,undefined,'');
 
-<!-- Makes it so when you click a link, you can't click the hash-redirect again -->
-window.addEventListener("popstate",function () {
-	window.scrollTo(window.scrollX, window.scrollY - 90);
-	window.URL = document.URL.substr(0,document.URL.indexOf('#'));
-	var x = 0;
-	history.pushState(x,"",window.URL);
-}, false);
+}
+function getOffset(el) {
+  el = document.getElementById(el).getBoundingClientRect();
+  return {
+    left: el.left + window.scrollX,
+    top: el.top + window.scrollY
+  }
+}
+
+function openMenu() {
+	var x = document.getElementsByClassName("menu");
+	x[0].style="display:none;";
+	x[1].style="display:block;";
+	document
+}
+function closeMenu() {
+	var x = document.getElementsByClassName("menu");
+	x[0].style="display:block;";
+	x[1].style="display:none;";
+}
+
+var sections = document.getElementsByClassName("sections");
+var navs = document.getElementsByClassName("directory");
+var navs2 = document.getElementsByClassName("directory2");
+function changeActive(active) {
+	var i = 1;
+	for (i;i<=5;i++){
+		if (active == i) {
+			navs[i].style.color="#3366cc";
+			navs2[5-i].style.color="black";
+
+		}
+		else {
+			navs[i].style.color="white";
+			navs2[5-i].style.color="white";
+
+		}
+	}
+
+}
+window.addEventListener("scroll",function () {
+
+	if (window.scrollY < getOffset(sections[0].id).top - 90) {
+		changeActive(5);
+	}	
+	else if (window.scrollY < getOffset(sections[1].id).top - 90) {
+
+		changeActive(4);
+	}
+	else if (window.scrollY < getOffset(sections[2].id).top - 90) {
+		changeActive(3);
+	}	
+	else if (window.scrollY < getOffset(sections[3].id).top - 110) {
+		changeActive(2);
+	}
+	else {
+		changeActive(1);
+	}	
+});
+
+
+
 window.addEventListener("resize", function () {
 	var navbar=document.getElementById("navbar-norm");
   	var collapse=document.getElementById("myNavbar");
