@@ -93,9 +93,10 @@
 		I can respond to you via
 	</div>
 	<div style="display:inherit;position:relative;z-index:10;left:5%;top:5%;width:95%">
-		<form action="http://formspree.io/andykubiak6@gmail.com" enctype="text/plain" method="POST" style="display:inline-block;width:100%">
+		<form id="contactform" action="http://formspree.io/andykubiak6@gmail.com" enctype="text/plain" method="POST" style="display:inline-block;width:100%">
 			<div class="form-container" style="display:inline-block;width:90%"> 
 				<div style="display:inline-block">
+					<input type="hidden" name="_next" value="//akoobatroopa.github.io/resume/" />				
 					<label><br>Email<br></label>
 					<input required type="email" name="_replyto" placeholder="Email@yoursite.com">
 					<label><br><br> or <br><br> Phone Number<br></label>
@@ -108,7 +109,7 @@
 					<label><br><br></label>
 					<input style="float:right" type="submit" Value="Send">
 					<label><br><br></label>
-					<input type="hidden" name="_next" value="https://akoobatroopa.github.io/resume/">
+					<input type="hidden" name="_format" value="plain">
 				</div>
 			</div>
 		</form>
