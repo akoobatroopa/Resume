@@ -1,246 +1,19 @@
 <!DOCTYPE html>
 <html>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.maskedinput.js" type="text/javascript"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Andrew Kubiak</title>
-
-
 <head>
-<style>
-body {color: white; background-color:#111111;margin:0;height:100%;width:100%;display:inline-block;overflow-x:hidden;}
-
-.dropbtn {
-    background-color: black;
-    color: white;
-    padding: 0px;
-    font-size: 0px;
-    border: none;
-    cursor: pointer;
-    transition-duration:.6s;
-}
-
-.dropdown {
-    list-style-type: none;
-    position: fixed;
-    display: inline-block;
-}
-
-.dropdown-content {
-
-    display: none;
-    position: relative;
-    color:black;
-}
-
-.dropdown-content a {
-    padding: 6px 8px;
-    text-decoration: none;
-    color:white;
-    background-color:gray;
-    display: block;
-    border:solid;
-    border-color:black;
-    border-width:.5px;
-}
-
-.dropdown-content a:hover {
-	background-color: #f1f1f1;
-	color:black;
-}
-
-.dropdown .dropdown-content {
-    display: block;
-    clear:right;
-    text-align:center;
-    float:none;
-}
-
-.dropdown:focus .dropbtn {
-    background-color: #549387;
-
-}
-
-.top-wrapper{
-	background-color:#000000;	
-	position:fixed;
-	width:100%;
-	top:0;
-	left:0;
-	overflow:hidden;
-	line-height:20px;
-	transition: color .5s;
-}
-
-#Home {
-	top:60px;
-	margin-top:0;
-	position:static;
-	overflow:hidden;
-	z-index:1;
-}
-
-.home-buttons {
-	overflow:hidden;
-	position:absolute;
-	padding:10px;
-	color:white;
-	background-color:transparent;
-	border:2px;
-	border-color:white;
-	border-style:double;
-	z-index:0;
-	text-shadow: -1px -1px 0 1px -1px 0 -1px 1px 0 1px 1px 0;
-
-}
-
-.home-buttons:hover {
-	overflow:hidden;
-	border:2px;
-	padding:10px;
-	border-color:#787878;
-	border-style:solid;
-	background-color:#005fb3;
-	color:black;
-	transition-duration:.35s;
-}
-
-.sections{
-	padding-top:0px;
-	height:100vh;
-	position:static;
-	overflow:hidden;
-	width:100%;
-	top-margin:0px;
-	background-color:#111111;
-
-}
-
-.background-container {
-	width:100vw;
-	height:100vh;
-	background-position:center center; 
-	background-repeat:no-repeat;
-	background-size:auto 100%;
-}
-
-
-
-
-#navbar {
-    list-style-type: none;
-    margin-top:-5px;
-    padding: 0;
-    overflow: hidden;
-    /*background-color: #333*/;
-    width:100%;
-   	display:inline-block;
-   	transition-duration: .5s;
-}
-
-.collapse-bar {
-	list-style-type:none;
-	margin-top:0;
-	padding:0;
-	overflow:hidden;
-	width:100%;
-	display:block;
-	transition-duration:.5s;
-	background-color:black;
-}
-.collapse-bar-scrolled {
-	list-style-type:none;
-	margin-top:0;
-	padding:0;
-	overflow:hidden;
-	width:100%;
-	display:block;
-	transition-duration:.5s;
-	background-color:#222 !important;
-}
-
-.collapse-drpbtn-scrolled {
-	background-color:#222 !important;
-	color:#222 !important;
-	transition-duration: .6s;
-
-}
-
-.collapse-item {
-	display:block;
-}
-.hidden {
-	display:none;
-}
-
-.visible {
-	list-style-type: none;
-    margin-top:-5px;
-    padding-top: 0;
-    background-color:;
-    overflow: hidden;
-    /*background-color: #333*/;
-    width:100%;
-   	display:inline-block;
-   	transition-duration: .5s;
-}
-
-a.active-bar {
-	color:#3366cc !important;
-	transition-duration:.5s !important;
-}
-
-a.inactive-bar {
-	color:white;
-	transition-duration:.5s;
-}
-.hidden-nav {
-	display:none;
-}
-
-.visible-nav {
-	list-style-type: none;
-    margin-top:-5px;
-    margin-bottom:-10px;
-    padding: 0;
-    overflow: hidden;
-    /*background-color: #333*/;
-    width:100%;
-   	display:inline-block;
-   	transition-duration: .5s;
-}
-.scrolled-nav {
-	background-color:#222 !important;
-	background-image:none !important;
-	transition-duration: .5s;
-	padding:0px;
-	margin-bottom:-10px !important;
-	margin-top:0px;
-}
-
-
-#navbar-item {
-	font-size:17px;
-	margin:20px;
-	display:inline-block;
-	float:right;
-
-}
-a.directory:link, a:visited{ 
-	color:white;
-	text-decoration:none;
-	cursor:auto;
-}
-a.directory:link:active, a:visited:active {
-	color:default;
-}
-
-
-</style>
+<link rel="stylesheet" type="text/css" href="stylin.css">
+<link rel="stylesheet" href="https://s3.amazonaws.com/icomoon.io/114779/Socicon/style.css?xjspsi">
 </head>
 
 
 <body>
+
+
 <nav class="top-wrapper" style="z-index:100;">
 	<div class="container-fluid">
 		<div id=navbar-norm class="navbar-norm hidden-nav">
@@ -249,8 +22,8 @@ a.directory:link:active, a:visited:active {
 				<li id=navbar-item name ="contact"><br><a class="directory" href="javascript:hashredirect('Contact')">Contact</a></li>
 				<li id=navbar-item name ="experience"><br><a class="directory" href="javascript:hashredirect('Experience')">Experience</a></li>
 				
-				<li id=navbar-item name="projects"><a class="directory" href="javascript:hashredirect('Projects')"><br>Projects</a></li>
 				<li id=navbar-item name="about"><a class="directory" href="javascript:hashredirect('About')"><br>About Me</a></li>
+				<li id=navbar-item name="projects"><a class="directory" href="javascript:hashredirect('Projects')"><br>Projects</a></li>
 				<li id=navbar-item name="home"><a class="directory"  href="javascript:hashredirect('Home')"><br>Home</a></li>		
 			</ul>
 		</div>
@@ -258,13 +31,13 @@ a.directory:link:active, a:visited:active {
 		<div class="collapse hidden dropdown" id="myNavbar">
 			<ul class=collapse-bar>
 				<li id=collapse-item style="margin-top:30px;margin-bottom:23px;margin-left:5px"><a style="text-decoration:none;font-size:40px;line-height:10px" href="index.html">Andrew Kubiak<span style="font-size:15px;"><br>Quiet Passion. Creative Solutions.</span></a></li>
-				<li id=collapse-item class="menu" style="visibility: visible;"><button style="float:right;margin-top:-70px;margin-right:-5px" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px" onclick="openMenu()"></button></li>
+				<li id=collapse-item class="menu" style="visibility: visible;"><button style="float:right;margin-top:-80px;margin-right:-15px" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px" onclick="openMenu()"></button></li>
 				<li id=collapse-item class="menu" style="visibility:hidden; display:none">
-					<button style="float:right;margin-top:-70px;margin-right:-5px" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px" onclick="closeMenu()"></button>
+					<button style="float:right;margin-top:-80px;margin-right:-15px" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px" onclick="closeMenu()"></button>
 					<div tabindex="0" class="dropdown-content">
-						<a class="directory2 active" style="color:black" href="javascript:hashredirect('Home')" onclick="closeMenu()">Home</a>
-						<a class="directory2" href="javascript:hashredirect('About')" onclick="closeMenu()">About Me</a>
+						<a class="directory2" style="color:black" href="javascript:hashredirect('Home')" onclick="closeMenu()">Home</a>
 						<a class="directory2" href="javascript:hashredirect('Projects')" onclick="closeMenu()">Projects</a>
+						<a class="directory2" href="javascript:hashredirect('About')" onclick="closeMenu()">About Me</a>					
 						<a class="directory2" href="javascript:hashredirect('Experience')" onclick="closeMenu()">Experience</a>
 						<a class="directory2" href="javascript:hashredirect('Contact')" onclick="closeMenu()">Contact</a>
 					</div>
@@ -272,171 +45,97 @@ a.directory:link:active, a:visited:active {
 			</ul>
 		</div>
 	</div>
-	<script type='text/javascript'>
-	var navbar=document.getElementById('navbar-norm');
-	var collapse=document.getElementById('myNavbar');
-	if($(window).width() < 1008) {
-	  	navbar.classList.add("hidden-nav");
-  		navbar.classList.remove("visible-nav");
-  		collapse.classList.add("visible");
-  		collapse.classList.remove("hidden");
-  	}
-  	else {
-  		navbar.classList.add("visible-nav");
-  		navbar.classList.remove("hidden-nav");
-  		collapse.classList.add("hidden");
-  		collapse.classList.remove("visible");
-  	}
-	</script>
 </nav>
-
 
 
 <div id="Home" class="background-container" style="background-image:url('flower.jpg');background-color:black;position:static">
 <div style="display:block;">
-<a href="javascript:hashredirect('About')"><button class="home-buttons" style="text-align:center;left:20%;top:50%;" >About Me</button></a>
-<a href="javascript:hashredirect('Contact')"><button class="home-buttons" style="float:right;right:20%;top:50%">Message Me</button></a>
+<a href="javascript:hashredirect('About')"><button class="home-buttons" style="text-align:center;left:10%;top:50%;" >About Me</button></a>
+<a href="javascript:hashredirect('Contact')"><button class="home-buttons" style="float:right;right:10%;top:50%">Message Me</button></a>
 </div>
 </div>
 
+<section id="Projects" class="sections Projects" >
+	<div class="border-bottom" style="">
+		<h1 style="text-align:center;float:none;text-decoration:none">
+			Projects
+		</h1>
+	</div>
+</section>
 
-<section id="About" class="sections About">
-<h1> Hi. How is it going?</h1>
+<section id="About" class="sections About" style="background-color:#002e2e">
+	<div class="border-bottom" style="">
+		<h1 style="text-align:center;float:none;text-decoration:none">
+			About Me
+		</h1>
+	</div>
 </section>
 
 
-<section id="Projects" class="sections Projects" style="background-color:#002e2e">
-<h2>This is what I do in my free time.</h2>
-</section>
+
 
 <section id="Experience" class="sections Experience">
-<h2>Experience</h2>
+	<div class="border-bottom">
+		<h1 style="text-align:center;float:none;text-decoration:none">
+			Experience
+		</h1>
+	</div>
 </section>
 
-<section id="Contact" class="background-container sections Contact" style="background-image:url('galaxy_1.jpg');background-size:auto auto;height:85vh;">
-<h2>Enter stuff below in order to contact me</h2>
+<section id="Contact" class="background-container sections Contact" style="margin-bottom:-10px;display:inline-block;background-image:url('rocket_ship.png');background-size:auto auto;height:auto;min-height:93vh;max-height:background-size">
+	<div class="border-bottom">
+		<h1 style="text-align:center;float:none;text-decoration:none">
+			Contact Me
+		</h1>
+	</div>
+	<p><br></p>
+	<div style="margin-left:5%;">
+		I can respond to you via
+	</div>
+	<div style="display:inherit;position:relative;z-index:10;left:5%;top:5%;width:95%">
+		<form action="http://formspree.io/andykubiak6@gmail.com" enctype="text/plain" method="post" style="display:inline-block;width:100%">
+			<div class="form-container" style="display:inline-block;width:90%"> 
+				<div style="display:inline-block">
+					<label><br>Email<br></label>
+					<input required type="email" name="person_Email" placeholder="Email@yoursite.com">
+					<label><br><br> or <br><br> Phone Number<br></label>
+					<input type="tel" id="person_Tel" name="person_Tel" placeholder="(optional)">
+					<label><br></label>
+				</div>
+				<div style="display:inline-block;float:right;">
+					<label><br></label>
+					<textarea required name="person_Message" rows="10" cols="30" placeholder="Message"></textarea>
+					<label><br><br></label>
+					<input style="float:right" type="submit" Value="Send Message">
+					<label><br><br></label>
+				</div>
+			</div>
+		</form>
+	</div>
 </section>
-<section class=sections style="display:none"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- used for navigation updating nav-bar when it reaches contact -->
+<section class=sections style="display:none;height:-10px;width:100%;"> 
 </section>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script>
-$(document).ready(function(){
-	var scrollTop;
-	var navbar=$(".navbar-norm");
-	var collapse=$(".collapse-bar");
-	var drpbtn=$(".dropbtn");
-
-	$(window).scroll(function(){
-	scrollTop = $(window).scrollTop();
-    if (scrollTop >= 10) {
-      navbar.addClass("scrolled-nav");
-      collapse.addClass("collapse-bar-scrolled");
-      drpbtn.addClass("collapse-drpbtn-scrolled");
-    } else if (scrollTop < 10) {
-      navbar.removeClass("scrolled-nav");
-      collapse.removeClass("collapse-bar-scrolled");
-      drpbtn.removeClass("collapse-drpbtn-scrolled");      
-    } 
-  }); 
-
-});
-
-</script>
-<script>
-
-<!-- Listens for hashchange in order to readjust for the navigation bar -->
-function hashredirect(loc) {
-	var el = getOffset(loc);
-	window.scrollTo(el.left,el.top - 90 );
-	history.replaceState(undefined,undefined,'');
-
-}
-function getOffset(el) {
-  el = document.getElementById(el).getBoundingClientRect();
-  return {
-    left: el.left + window.scrollX,
-    top: el.top + window.scrollY
-  }
-}
-
-function openMenu() {
-	var x = document.getElementsByClassName("menu");
-	x[0].style="display:none;";
-	x[1].style="display:block;";
-	document
-}
-function closeMenu() {
-	var x = document.getElementsByClassName("menu");
-	x[0].style="display:block;";
-	x[1].style="display:none;";
-}
-
-var sections = document.getElementsByClassName("sections");
-var navs = document.getElementsByClassName("directory");
-var navs2 = document.getElementsByClassName("directory2");
-function changeActive(active) {
-	var i = 1;
-	for (i;i<=5;i++){
-		if (active == i) {
-			navs[i].style.color="#3366cc";
-			navs2[5-i].style.color="black";
-
-		}
-		else {
-			navs[i].style.color="white";
-			navs2[5-i].style.color="white";
-
-		}
-	}
-
-}
-window.addEventListener("scroll",function () {
-
-	if (window.scrollY < getOffset(sections[0].id).top - 90) {
-		changeActive(5);
-	}	
-	else if (window.scrollY < getOffset(sections[1].id).top - 90) {
-
-		changeActive(4);
-	}
-	else if (window.scrollY < getOffset(sections[2].id).top - 90) {
-		changeActive(3);
-	}	
-	else if (window.scrollY < getOffset(sections[3].id).top - 110) {
-		changeActive(2);
-	}
-	else {
-		changeActive(1);
-	}	
-});
-window.addEventListener("load",function () {
-	var navs = document.getElementsByClassName("directory");
-	var navs2 = document.getElementsByClassName("directory2");
-	console.log(navs2[0]);
-	navs2[0].style.color="black";
-	navs[5].style.color="#3366cc";
-
-});
 
 
-window.addEventListener("resize", function () {
-	var navbar=document.getElementById("navbar-norm");
-  	var collapse=document.getElementById("myNavbar");
-	if(document.body.clientWidth < 1008) {
-	  	navbar.classList.add("hidden-nav");
-  		navbar.classList.remove("visible-nav");
-  		collapse.classList.add("visible");
-  		collapse.classList.remove("hidden");
-  	}
-  	else {
-  		navbar.classList.add("visible-nav");
-  		navbar.classList.remove("hidden-nav");
-  		collapse.classList.add("hidden");
-  		collapse.classList.remove("visible");
-  	}
-}, false);	
-</script>
-
+<script type='text/javascript' src="js/navbar_scrolling.js"></script>
+<script type='text/javascript' src="js/navbar_scrolled.js"></script>
+<script type='text/javascript' src="js/navigation.js"></script>
+<script type='text/javascript' src="js/event_listeners.js"></script>
+<script type='text/javascript' src="js/form_handling.js"></script>
 </body>
 
 

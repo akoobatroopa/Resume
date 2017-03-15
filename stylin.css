@@ -1,0 +1,254 @@
+
+body {color: white; background-color:#111111;margin:0;height:100%;width:100%;display:inline-block;overflow-x:hidden;}
+
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding: 0px;
+    font-size: 0px;
+    border: none;
+    cursor: pointer;
+    transition-duration:.5s;
+}
+
+.dropdown {
+    list-style-type: none;
+    position: fixed;
+    display: inline-block;
+    transition-duration:.5s;
+    margin-bottom:0;
+}
+
+.dropdown-content {
+
+    display: none;
+    position: relative;
+    color:black;
+    transition-duration:.5s;
+}
+
+.dropdown-content a {
+    padding: 6px 8px;
+    text-decoration: none;
+    color:white;
+    background-color:gray;
+    display: block;
+    border:solid;
+    border-color:black;
+    border-width:.5px;
+}
+
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+	color:black;
+}
+
+.dropdown .dropdown-content {
+    display: block;
+    clear:right;
+    text-align:center;
+    float:none;
+    transition-duration:.5s;
+}
+
+.dropdown:focus .dropbtn {
+    background-color: #549387;
+
+}
+
+.top-wrapper{
+	background-color:#000000;	
+	position:fixed;
+	width:100%;
+	top:0;
+	left:0;
+	right:0;
+	overflow:hidden;
+	line-height:20px;
+	transition-duration:.5s;
+}
+
+#Home {
+	top:60px;
+	margin-top:0;
+	position:static;
+	overflow:hidden;
+	z-index:1;
+}
+
+.home-buttons {
+	overflow:hidden;
+	position:absolute;
+	padding:10px;
+	color:white;
+	background-color:transparent;
+	border:2px;
+	border-color:white;
+	border-style:double;
+	z-index:0;
+	text-shadow: -1px -1px 0 1px -1px 0 -1px 1px 0 1px 1px 0;
+
+}
+
+.home-buttons:hover {
+	overflow:hidden;
+	border:2px;
+	padding:10px;
+	border-color:#787878;
+	border-style:solid;
+	background-color:#0047af;
+	color:black;
+	transition-duration:.15s;
+}
+
+.sections{
+	padding-top:0px;
+	height:auto;
+	position:static;
+	overflow:hidden;
+	width:100%;
+	top-margin:0px;
+	background-color:#111111;
+	min-height:95vh;
+}
+
+.background-container {
+	width:100vw;
+	height:100vh;
+	background-position:center center; 
+	background-repeat:no-repeat;
+	background-size:auto 100%;
+}
+
+
+.gray {
+	background-color:#222222;
+	transition-duration:.6s;
+}
+
+#navbar {
+    list-style-type: none;
+    margin-top:-5px;
+    padding: 0;
+    overflow: hidden;
+    /*background-color: #333*/;
+    width:100%;
+   	display:inline-block;
+   	transition-duration: .5s;
+   	background-color:transparent;
+}
+
+.collapse-bar {
+	list-style-type:none;
+	margin-top:0;
+	padding:0;
+	overflow:hidden;
+	width:100%;
+	display:block;
+	transition-duration:.2s;
+	background-color:transparent;
+	margin-bottom:0;
+
+}
+.collapse-bar-scrolled {
+	list-style-type:none;
+	margin-top:0;
+	padding:0;
+	overflow:hidden;
+	width:100%;
+	display:block;
+	transition-duration:.5s;
+	background-color:#222 !important;
+}
+
+.collapse-drpbtn-scrolled {
+	background-color:#222 !important;
+	color:#222 !important;
+	transition-duration: .6s;
+
+}
+
+.collapse-item {
+	display:block;
+}
+.hidden {
+	display:none;
+}
+
+.visible {
+	list-style-type: none;
+    margin-top:-5px;
+    padding-top: 0;
+    background-color:;
+    overflow: hidden;
+    /*background-color: #333*/;
+    width:100%;
+   	display:inline-block;
+   	transition-duration: .5s;
+}
+
+a.active-bar {
+	color:#3366cc !important;
+	transition-duration:.5s !important;
+}
+
+a.inactive-bar {
+	color:white;
+	transition-duration:.5s;
+}
+.hidden-nav {
+	display:none;
+}
+
+.visible-nav {
+	list-style-type: none;
+    margin-top:-5px;
+    margin-bottom:-10px;
+    padding: 0;
+    overflow: hidden;
+    /*background-color: #333*/;
+    width:100%;
+   	display:inline-block;
+   	transition-duration: .5s;
+}
+.scrolled-nav {
+	background-color:#222 !important;
+	background-image:none !important;
+	transition-duration: .5s;
+	padding:0px;
+	margin-bottom:-10px !important;
+	margin-top:0px;
+}
+
+
+#navbar-item {
+	font-size:17px;
+	margin:20px;
+	display:inline-block;
+	float:right;
+
+}
+a.directory:link, a:visited{ 
+	color:white;
+	text-decoration:none;
+	cursor:auto;
+}
+a.directory:link:active, a:visited:active {
+	color:default;
+}
+
+.border-bottom {
+
+	border-bottom-width:3px;
+	border-bottom-style:groove;
+	border-bottom-color:white;
+	text-align:center;
+	margin-left:25%;
+	width:50%;
+	height:25px
+}
+
+@media screen and {min-width:800px} 
+	{
+		display:none;
+}
