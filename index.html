@@ -20,9 +20,8 @@
 			<ul id="navbar" class="navbar">
 				<li id=navbar-item style="float:left;font-size:25px;line-height:10px"><a class="directory" href="index.html"><br><br>Andrew Kubiak <br> <span style="font-size:15px;"><br>Quiet Passion. Creative Solutions.</span></a></li>
 				<li id=navbar-item name ="contact"><br><a class="directory" href="javascript:hashredirect('Contact')">Contact</a></li>
-				<li id=navbar-item name ="experience"><br><a class="directory" href="javascript:hashredirect('Experience')">Experience</a></li>
-				
 				<li id=navbar-item name="about"><a class="directory" href="javascript:hashredirect('About')"><br>About Me</a></li>
+				<li id=navbar-item name ="experience"><br><a class="directory" href="javascript:hashredirect('Experience')">Experience</a></li>
 				<li id=navbar-item name="projects"><a class="directory" href="javascript:hashredirect('Projects')"><br>Projects</a></li>
 				<li id=navbar-item name="home"><a class="directory"  href="javascript:hashredirect('Home')"><br>Home</a></li>		
 			</ul>
@@ -30,15 +29,15 @@
 
 		<div class="collapse hidden dropdown" id="myNavbar">
 			<ul class=collapse-bar>
-				<li id=collapse-item style="margin-top:30px;margin-bottom:23px;margin-left:5px"><a style="text-decoration:none;font-size:40px;line-height:10px" href="index.html">Andrew Kubiak<span style="font-size:15px;"><br>Quiet Passion. Creative Solutions.</span></a></li>
-				<li id=collapse-item class="menu" style="visibility: visible;"><button style="float:right;margin-top:-80px;margin-right:-15px" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px" onclick="openMenu()"></button></li>
+				<li id=collapse-item class="collapse-name"><a class="coll-name" href="index.html">Andrew Kubiak<span class="name-span-coll""><br>Quiet Passion. Creative Solutions.</span></a></li>
+				<li id=collapse-item class="menu" style="visibility: visible;"><button class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px" onclick="openMenu()"></button></li>
 				<li id=collapse-item class="menu" style="visibility:hidden; display:none">
-					<button style="float:right;margin-top:-80px;margin-right:-15px" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px" onclick="closeMenu()"></button>
+					<button style="" class="dropbtn navbar-item"><img src="hamburger.png" style="width:80px" onclick="closeMenu()"></button>
 					<div tabindex="0" class="dropdown-content">
-						<a class="directory2" style="color:black" href="javascript:hashredirect('Home')" onclick="closeMenu()">Home</a>
+						<a class="directory2" href="javascript:hashredirect('Home')" onclick="closeMenu()">Home</a>
 						<a class="directory2" href="javascript:hashredirect('Projects')" onclick="closeMenu()">Projects</a>
-						<a class="directory2" href="javascript:hashredirect('About')" onclick="closeMenu()">About Me</a>					
 						<a class="directory2" href="javascript:hashredirect('Experience')" onclick="closeMenu()">Experience</a>
+						<a class="directory2" href="javascript:hashredirect('About')" onclick="closeMenu()">About Me</a>					
 						<a class="directory2" href="javascript:hashredirect('Contact')" onclick="closeMenu()">Contact</a>
 					</div>
 				</li>
@@ -48,24 +47,59 @@
 </nav>
 
 
-<div id="Home" class="background-container" style="background-image:url('flower.jpg');background-color:black;position:static">
-<div style="display:block;">
-<a href="javascript:hashredirect('About')"><button class="home-buttons" style="text-align:center;left:10%;top:50%;" >About Me</button></a>
-<a href="javascript:hashredirect('Contact')"><button class="home-buttons" style="float:right;right:10%;top:50%">Message Me</button></a>
-</div>
+<div id="Home" class="background-container Home">
+	<div style="display:block;height:100%">
+		<a href="javascript:hashredirect('About')"><button class="home-buttons" style="text-align:center;left:10%;top:50%;" >About Me</button></a>
+		<a href="javascript:hashredirect('Contact')"><button class="home-buttons" style="float:right;right:10%;top:50%">Message Me</button></a>
+	</div>
 </div>
 
 <section id="Projects" class="sections Projects" >
-	<div class="border-bottom" style="">
-		<h1 style="text-align:center;float:none;text-decoration:none">
+	<div class="border-bottom">
+		<h1 class="section-head">
 			Projects
+		</h1>
+	</div>
+	<div class="project-container" style="display:inline-block">
+	<div class="project-container">
+		<div id="dropbox" class="project" style="float:left;">
+			<h1 class="object-header">( 1 )</h1>
+			<p><a target="_blank" href="https://github.com/jtb8vm/cs3240-f15-team13" type="_blank"><svg aria-hidden="true" class="octicon octicon-mark-github" version="1.1" viewBox="0 0 16 16" height="128" preserveAspectRatio="none"><path fill="white" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a></p>
+			<p style="font-size:12px;">Agile version control of a Dropbox-like application using Django/Python framework. Secure application forcing users to sign in with credentials stored in MySQL database. Upload asymmetrically encrypted reports and can share these reports with other users or groups. Users have the ability to encrypt messages between each other and create groups.</p>
+		</div>
+		<div id="tour" class="project" style="float:right">
+			<h1 class="object-header">( 2 )</h1>
+			<a target="_blank" href="https://bitbucket.org/adk9nc_uva/team_62_cs2110_project/"><img src="pics/guided_tour.png" style="max-width: 80%;"></a>
+			<p style="font-size:12px;text-align:center;">Mobile tour-guide application for Android using Java. Interfaced with Google Maps API to track the user's location.</p>
+		</div>
+		</div>
+		<div class="project-container">
+			<div id="website" class="project" style="float:left">
+				<h1 class="object-header">( 3 )</h1>
+				<img src="pics/website.png" style="max-width:80%">
+				<p style="font-size:12px"> This website! Source code is available at <a style="color:blue" target="_blank" href="https://github.com/akoobatroopa/resume">my github</a> page!</p>
+			</div>
+			<div id="capstone" class="project" style="float:right">
+				<h1 class="object-header">( 4 )</h1>
+				<img src="pics/capstone.png" style="max-width:80%">
+				<p style="font-size:12px"> Developed a co-culture genome scale metabolic reconstruction of liver stage malaria. Utilizing constraint based linear programming, a reconstruction can quickly calculate metabolic function in a cell, providing new insights into cell activity and guiding further experimentation. Contact me for further details.</p>
+		</div>
+		</div>
+	</div>
+</section>
+
+<section id="Experience" class="sections Experience">
+	<div class="border-bottom">
+		<h1 class="section-head">
+			Experience
 		</h1>
 	</div>
 </section>
 
-<section id="About" class="sections About" style="background-color:#002e2e">
-	<div class="border-bottom" style="">
-		<h1 style="text-align:center;float:none;text-decoration:none">
+
+<section id="About" class="sections About" >
+	<div class="border-bottom">
+		<h1 class="section-head">
 			About Me
 		</h1>
 	</div>
@@ -73,48 +107,72 @@
 
 
 
-
-<section id="Experience" class="sections Experience">
+<section id="Contact" class="background-container sections Contact">
 	<div class="border-bottom">
-		<h1 style="text-align:center;float:none;text-decoration:none">
-			Experience
-		</h1>
-	</div>
-</section>
-
-<section id="Contact" class="background-container sections Contact" style="margin-bottom:-10px;display:inline-block;background-image:url('rocket_ship.png');background-size:auto auto;height:auto;min-height:93vh;max-height:background-size">
-	<div class="border-bottom">
-		<h1 style="text-align:center;float:none;text-decoration:none">
+		<h1 class="section-head">
 			Contact Me
 		</h1>
 	</div>
 	<p><br></p>
-	<div style="margin-left:5%;">
-		I can respond to you via
-	</div>
-	<div style="display:inherit;position:relative;z-index:10;left:5%;top:5%;width:95%">
-		<form id="contactform" action="//formspree.io/andykubiak6@gmail.com" method="POST" style="display:inline-block;width:100%">
-			<div class="form-container" style="display:inline-block;width:90%"> 
-				<div style="display:inline-block">
+
+	<div class="form-bucket">
+		<form id="contactform" action="//formspree.io/andykubiak6@gmail.com" method="POST">
+			<div class="form-container"> 
+				<div class="method-center">
+					<label>I can respond to you,</label>
+					<div class="name-center">
+						<input required type="text" id="name" name="Name" placeholder="FirstName LastName">
+						<label style="text-align:center">,by</label>
+					</div>					
 					<input type="hidden" name="_next" value="//akoobatroopa.github.io/resume/" />				
-					<label><br>Email<br></label>
-					<input required type="email" name="_replyto" placeholder="Email@yoursite.com">
-					<label><br><br> or <br><br> Phone Number<br></label>
+					<label><br><br><br>Email<br></label>
+					<input type="email" name="_replyto" placeholder="Email@yoursite.com">
+					<label style="text-align:center;"><br><br>or</span><br><br>Phone <br></label>
 					<input type="tel" id="person_Tel" name="person_Tel" placeholder="(optional)">
 					<label><br></label>
-					<input type="text" id="name" name="Name" placeholder="FirstName LastName">
-					<lable><br></label>
-				</div>
-				<div style="display:inline-block;float:right;">
+					
 					<label><br></label>
+				</div>
+				<div class="message-center">
+					<label><br><br></label>
 					<textarea required name="person_Message" rows="10" cols="30" placeholder="Message"></textarea>
 					<label><br><br></label>
-					<input style="float:right" type="submit" Value="Send">
+					<input type="submit" Value="Send">
 					<label><br><br></label>
 					<input type="hidden" name="_format" value="plain">
 				</div>
 			</div>
-		</form>
+		</form>		
+	</div>
+	<div class="form-bucket2" style="display:none">
+		<form id="contactform" action="//formspree.io/andykubiak6@gmail.com" method="POST">
+			<div class="form-container"> 
+				<div class="method-center">
+					<label>I can respond to you</label>
+					<div class="name-center">
+						<input required type="text" id="name" name="Name" placeholder="FirstName LastName">
+					</div>
+					<label>by</label>					
+					<input type="hidden" name="_next" value="//akoobatroopa.github.io/resume/" />				
+					<label><br><br><br>Email<br></label>
+					<input id="person_Email" type="email" size="35" name="_replyto" placeholder="Email@yoursite.com">
+					<label><br><br>or<br><br>Phone <br></label>
+					<input type="tel" id="person_Tel2" name="person_Tel" placeholder="(optional)">
+					<label><br></label>
+					
+					<label><br></label>
+				</div>
+
+				<div class="message-center">
+					<label><br></label>
+					<textarea required name="person_Message" rows="10" cols="35" placeholder="Message"></textarea>
+					<label><br><br></label>
+					<input style="float:right" class="message-button" type="submit" Value="Send">
+					<label><br><br></label>
+					<input type="hidden" name="_format" value="plain">
+				</div>
+			</div>
+		</form>		
 	</div>
 </section>
 

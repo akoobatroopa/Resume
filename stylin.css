@@ -1,5 +1,27 @@
 
-body {color: white; background-color:#111111;margin:0;height:100%;width:100%;display:inline-block;overflow-x:hidden;}
+body {
+	color: white;
+	background-color:#111111;
+	margin:0;
+	height:100%;
+	width:100%;
+	display:inline-block;
+	overflow-x:hidden;
+}
+
+/* Navbar Styling */
+
+.top-wrapper{
+	background-color:#000000;	
+	position:fixed;
+	width:100%;
+	top:0;
+	left:0;
+	right:0;
+	overflow:hidden;
+	line-height:20px;
+	transition-duration:.5s;
+}
 
 .dropbtn {
     background-color: black;
@@ -9,6 +31,9 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
     border: none;
     cursor: pointer;
     transition-duration:.5s;
+	float:right;
+	margin-top:-80px;
+	margin-right:-15px    
 }
 
 .dropdown {
@@ -53,73 +78,7 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
 
 .dropdown:focus .dropbtn {
     background-color: #549387;
-
 }
-
-.top-wrapper{
-	background-color:#000000;	
-	position:fixed;
-	width:100%;
-	top:0;
-	left:0;
-	right:0;
-	overflow:hidden;
-	line-height:20px;
-	transition-duration:.5s;
-}
-
-#Home {
-	top:60px;
-	margin-top:0;
-	position:static;
-	overflow:hidden;
-	z-index:1;
-}
-
-.home-buttons {
-	overflow:hidden;
-	position:absolute;
-	padding:10px;
-	color:white;
-	background-color:transparent;
-	border:2px;
-	border-color:white;
-	border-style:double;
-	z-index:0;
-	text-shadow: -1px -1px 0 1px -1px 0 -1px 1px 0 1px 1px 0;
-
-}
-
-.home-buttons:hover {
-	overflow:hidden;
-	border:2px;
-	padding:10px;
-	border-color:#787878;
-	border-style:solid;
-	background-color:#0047af;
-	color:black;
-	transition-duration:.15s;
-}
-
-.sections{
-	padding-top:0px;
-	height:auto;
-	position:static;
-	overflow:hidden;
-	width:100%;
-	top-margin:0px;
-	background-color:#111111;
-	min-height:95vh;
-}
-
-.background-container {
-	width:100vw;
-	height:100vh;
-	background-position:center center; 
-	background-repeat:no-repeat;
-	background-size:auto 100%;
-}
-
 
 .gray {
 	background-color:#222222;
@@ -181,7 +140,6 @@ body {color: white; background-color:#111111;margin:0;height:100%;width:100%;dis
     padding-top: 0;
     background-color:;
     overflow: hidden;
-    /*background-color: #333*/;
     width:100%;
    	display:inline-block;
    	transition-duration: .5s;
@@ -220,6 +178,21 @@ a.inactive-bar {
 	margin-top:0px;
 }
 
+.collapse-name {
+	margin-top:30px;
+	margin-bottom:23px;
+	margin-left:5px
+}
+
+a.coll-name {
+	text-decoration:none;
+	font-size:30px;
+	line-height:10px;
+}
+span.name-span-coll {
+	font-size:10px;
+}
+
 
 #navbar-item {
 	font-size:17px;
@@ -237,6 +210,34 @@ a.directory:link:active, a:visited:active {
 	color:default;
 }
 
+
+/* Section styling */
+
+.section-head {
+	text-align:center;float:none;text-decoration:none
+}
+
+.sections{
+	padding-top:0px;
+	height:auto;
+	position:static;
+	overflow:hidden;
+	width:100%;
+	top-margin:0px;
+	background-color:#111111;
+	min-height:95vh;
+}
+
+.background-container {
+	width:100vw;
+	height:100vh;
+	background-position:center center; 
+	background-repeat:no-repeat;
+	background-size:auto 100%;
+}
+
+
+
 .border-bottom {
 
 	border-bottom-width:3px;
@@ -248,7 +249,222 @@ a.directory:link:active, a:visited:active {
 	height:25px
 }
 
-@media screen and {min-width:800px} 
-	{
-		display:none;
+.object-header {
+	font-size:15px;
+	text-align:center;
+}
+/* Home Styling */
+.Home {
+	top:60px;
+	margin-top:0;
+	position:static;
+	overflow:hidden;
+	z-index:1;
+	background-image:url('pics/flower.jpg');
+	background-color:black;
+	position:static;
+}
+
+.home-buttons {
+	overflow:hidden;
+	position:absolute;
+	padding:10px;
+	color:white;
+	background-color:transparent;
+	border:2px;
+	border-color:white;
+	border-style:double;
+	z-index:0;
+	text-shadow: -1px -1px 0 1px -1px 0 -1px 1px 0 1px 1px 0;
+
+}
+
+.home-buttons:hover {
+	overflow:hidden;
+	border:2px;
+	padding:10px;
+	border-color:#787878;
+	border-style:solid;
+	background-color:#0047af;
+	color:black;
+	transition-duration:.15s;
+}
+
+/* About Styling */
+
+.Experience {
+	background-color:#002e2e !important;
+}
+
+/* Projects Styling */
+.Projects {
+	display:inline-block;
+	width:100%;
+}
+
+.project-container {
+	padding:0;
+	margin:0;
+	text-align:center;
+	display:inline-block;
+}
+
+.project {
+	margin:0;
+	padding:3%;
+	display:inline-block;
+	min-width:25%;
+	max-width:40%;
+
+}
+
+#website {
+	max-width:45%;
+}
+
+/* Experience Styling */
+.Experience {
+
+}
+
+/* Contact Styling */
+
+.Contact {
+	margin-bottom:-10px;
+	display:inline-block;
+	background-image:url('pics/rocket_ship.png');
+	background-size:auto auto;
+	height:auto;min-height:93vh;
+	max-height:background-size;
+	transition-duration:.5s;
+}
+
+.form-bucket {
+	display:inline-block;
+	position:relative;
+	z-index:10;
+	left:5%;
+	top:5%;
+	width:100%
+}
+
+.form-container {
+	display:inline-block;
+	width:100%
+}
+
+#contactform {
+	width:100%;
+}
+
+.method-center {
+	display:inline-block;
+	width:45%;
+	text-align:center;
+	vertical-align:top;
+
+}
+
+.name-center {
+	display:inline-block;
+}
+
+.message-center {
+	vertical-align:top;	
+	width:54%;
+	display:inline-block;
+	text-align:center;
+}
+
+
+@media only screen and (max-width: 883px) { 
+
+
+
+.Projects .project-container .project{
+	float:none !important;
+	margin:auto !important;
+	display:block !important;
+	max-width:90%;
+}
+
+#website #dropbox {
+	max-width:80% !important;
+}
+#tour {
+	max-width:45%;
+}
+#capstone {
+	max-width:60%;
+}
+
+
+.Contact {
+	margin-bottom:-10px;
+	display:block;
+	background-image:url('pics/light_spectrum.png');
+	background-size:auto auto;
+	height:auto;min-height:93vh;
+	max-height:background-size;
+	transition-duration: .5s;
+}
+
+.form-bucket {
+	display:none;
+}
+
+.form-bucket2 {
+	display:block !important;
+}
+
+.form-container {
+
+	display:block;
+	text-align:center;
+}
+
+#contactform {
+	width:100%;
+}
+
+.method-center {
+	float:none;
+	text-align:center;
+	width:100%;
+}
+
+.name-center {
+	display:block;
+	text-align:center;
+}
+
+.message-center {
+	display:block !important;
+	float:none !important;
+	text-align:center !important;
+	width:100%;
+}
+.message-button {
+	float:none !important;
+}
+#name {
+	display:inline-block !important;
+	text-align:center;
+	vertical-align:top;
+	float:none !important;
+	width:auto;
+}
+#Name2 {
+	display:none !important;
+}
+
+.or {
+	margin-left:0;
+}
+#person_Tel2 {
+	text-align:center;
+}
+#person_Email {
+	text-align:center;
+}
 }

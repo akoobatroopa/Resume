@@ -1,7 +1,7 @@
 function hashredirect(loc) {
 	var el = getOffset(loc);
 	var yloc = window.scrollY
-	$('html,body').animate({ scrollTop: el.top-90 }, 500);
+	$('html,body').animate({ scrollTop: el.top-85 }, 500);
 	
 
 	//window.scrollTo(el.left,el.top - 90 );

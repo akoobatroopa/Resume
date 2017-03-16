@@ -1,6 +1,10 @@
 jQuery(function($) {
 	$("#person_Tel").mask("(999) 999-9999");
 });
+jQuery(function($) {
+    $("#person_Tel2").mask("(999) 999-9999");
+});
+
 
 
 var message = "";
