@@ -82,5 +82,7 @@ function timeOfDay() {
 		git.style.fill="black";
 		abo.style.color="#303030";
 		abo.style.backgroundColor="#b7b7b7"
+		var cap = document.getElementById("capstone-pic");
+		cap.src = "pics/capstone2.png"
 	}
 }

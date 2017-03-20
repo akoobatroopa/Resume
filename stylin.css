@@ -392,7 +392,11 @@ a.directory:link:active, a:visited:active {
 	max-width:80% !important;
 }
 #tour {
-	max-width:45%;
+	max-width:50%;
+}
+
+#tour_pic {
+	max-width:80% !important;
 }
 #capstone {
 	max-width:60%;
@@ -467,4 +471,5 @@ a.directory:link:active, a:visited:active {
 #person_Email {
 	text-align:center;
 }
+
 }
