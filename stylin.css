@@ -290,10 +290,10 @@ a.directory:link:active, a:visited:active {
 	transition-duration:.15s;
 }
 
-/* About Styling */
+/* Experience Styling */
 
 .Experience {
-	background-color:#002e2e !important;
+	background-color:#002e2e;
 }
 
 /* Projects Styling */
@@ -322,8 +322,8 @@ a.directory:link:active, a:visited:active {
 	max-width:45%;
 }
 
-/* Experience Styling */
-.Experience {
+/* About Styling */
+.About {
 
 }
 

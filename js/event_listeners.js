@@ -9,6 +9,7 @@ window.addEventListener("scroll",function () {
 });
 window.addEventListener("load",function () {
 	location_check();
+	timeOfDay();
 });
 
 
@@ -62,4 +63,24 @@ function changeActive(active) {
 		}
 	}
 
+}
+
+function timeOfDay() {
+	var timeOfDay = new Date();
+	var timeOfDay = timeOfDay.getHours();
+	if (timeOfDay >= 6 && timeOfDay<= 17) {
+		var abo = document.getElementById("About");
+		var git = document.getElementById("github");
+		var pro = document.getElementById("Projects");
+		var exp = document.getElementById("Experience");
+		document.body.backgroundColor="#c1b08b";		
+		exp.style.marginTop="-5px";
+		exp.style.color="white"
+		exp.style.backgroundColor="#333";
+		pro.style.color="#303030";
+		pro.style.backgroundColor="#b7b7b7";
+		git.style.fill="black";
+		abo.style.color="#303030";
+		abo.style.backgroundColor="#b7b7b7"
+	}
 }
