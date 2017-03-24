@@ -324,7 +324,22 @@ a.directory:link:active, a:visited:active {
 
 /* About Styling */
 .About {
+	display:inline-block;
+	width:100%;
+}
 
+.about-container {
+	padding:0;
+	margin:0;
+	text-align:center;
+	display:inline-block;
+}
+
+.content {
+	margin:0;
+	padding:3%;
+	display:inline-block;
+	font-size:12px;
 }
 
 /* Contact Styling */
@@ -402,6 +417,14 @@ a.directory:link:active, a:visited:active {
 	max-width:60%;
 }
 
+
+.About .about-container .content {
+	float:none !important;
+	width:100% !important;
+	display:block !important;
+	margin:0 !important;
+	padding:0 !important;
+}
 
 .Contact {
 	margin-bottom:-10px;
