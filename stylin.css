@@ -246,7 +246,7 @@ a.directory:link:active, a:visited:active {
 
 
 .border-bottom {
-
+	height:4%;
 	border-bottom-width:3px;
 	border-bottom-style:groove;
 	border-bottom-color:white;
@@ -364,7 +364,7 @@ a.directory:link:active, a:visited:active {
 	display:inline-block;
 	background-image:url('pics/rocket_ship.png');
 	background-size:auto auto;
-	height:auto;min-height:93vh;
+	height:auto;min-height:85vh;
 	transition-duration:.5s;
 }
 
@@ -431,15 +431,19 @@ a.directory:link:active, a:visited:active {
 	max-width:60%;
 }
 
+.skillz {
+	font-size:15px !important;
+}
+
 .Experience {
 	display:block;
 	float:none !important;
-}
-
-.active {
+	font-size:20px !important;
+	margin-left:0;
 }
 
 .skill-image-cont {
+	margin-left:0 !important;
 	width:60% !important;
 	margin-left:20% !important;
 	float:none;
@@ -448,6 +452,12 @@ a.directory:link:active, a:visited:active {
 
 .skill-pic {
 	width:80% !important;
+}
+
+.project-container ul {
+	margin-top:-10px !important;
+	width:70% !important;
+	margin-left:-20px;
 }
 
 
@@ -459,10 +469,6 @@ a.directory:link:active, a:visited:active {
 	padding:0 !important;
 }
 
-.project-container ul {
-	margin-top:-10px !important;
-	width:70% !important;
-}
 
 .Contact {
 	margin-bottom:-10px;
