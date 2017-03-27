@@ -2,21 +2,27 @@ var navs = document.getElementsByClassName("directory");
 var navs2 = document.getElementsByClassName("directory2");
 var sections = document.getElementsByClassName("sections");
 
-
+var navbar=document.getElementById("navbar-norm");
+var collapse=document.getElementById("myNavbar");
 
 window.addEventListener("scroll",function () {
 	location_check();
+	scrollbar_active(navbar,collapse);
 });
 window.addEventListener("load",function () {
 	location_check();
+	scrollbar_active(navbar,collapse);
 	timeOfDay();
 });
 
 
 window.addEventListener("resize", function () {
-	var navbar=document.getElementById("navbar-norm");
-  	var collapse=document.getElementById("myNavbar");
-	if(document.body.clientWidth < 868) {
+
+  	scrollbar_active(navbar,collapse);
+}, false);	
+
+function scrollbar_active(navbar, collapse) {
+	if(document.body.clientWidth < 920) {
 	  	navbar.classList.add("hidden-nav");
   		navbar.classList.remove("visible-nav");
   		collapse.classList.add("visible");
@@ -28,7 +34,7 @@ window.addEventListener("resize", function () {
   		collapse.classList.add("hidden");
   		collapse.classList.remove("visible");
   	}
-}, false);	
+}
 
 function location_check () {
 	if (window.scrollY < getOffset(sections[0].id).top - 250) {

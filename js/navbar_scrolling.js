@@ -1,7 +1,7 @@
 function nav_bar() {
   var navbar=document.getElementById('navbar-norm');
 	var collapse=document.getElementById('myNavbar');
-	if(document.body.clientWidth <868) {
+	if(document.body.clientWidth <920) {
 	  	navbar.classList.add("hidden-nav");
   		navbar.classList.remove("visible-nav");
   		collapse.classList.add("visible");

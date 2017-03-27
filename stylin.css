@@ -138,7 +138,6 @@ body {
 	list-style-type: none;
     margin-top:-5px;
     padding-top: 0;
-    background-color:;
     overflow: hidden;
     width:100%;
    	display:inline-block;
@@ -174,7 +173,7 @@ a.inactive-bar {
 	background-image:none !important;
 	transition-duration: .5s;
 	padding:0px;
-	margin-bottom:-10px !important;
+	margin-bottom:-15px !important;
 	margin-top:0px;
 }
 
@@ -195,26 +194,34 @@ span.name-span-coll {
 
 
 #navbar-item {
-	font-size:17px;
+	font-size:20px;
 	margin:20px;
 	display:inline-block;
 	float:right;
 
 }
+
+.skill-item {
+	font-size:20px;
+	display:inline-block;
+	border:none;
+	background-color:none;
+	background: none;
+}
+
 a.directory:link, a:visited{ 
 	color:white;
 	text-decoration:none;
 	cursor:auto;
 }
 a.directory:link:active, a:visited:active {
-	color:default;
 }
 
 
 /* Section styling */
 
 .section-head {
-	text-align:center;float:none;text-decoration:none
+	text-align:center;float:none;text-decoration:none;font-size:30px;
 }
 
 .sections{
@@ -223,9 +230,9 @@ a.directory:link:active, a:visited:active {
 	position:static;
 	overflow:hidden;
 	width:100%;
-	top-margin:0px;
 	background-color:#111111;
 	min-height:95vh;
+	padding-bottom:10px;
 }
 
 .background-container {
@@ -246,7 +253,7 @@ a.directory:link:active, a:visited:active {
 	text-align:center;
 	margin-left:25%;
 	width:50%;
-	height:25px
+	height:30px
 }
 
 .object-header {
@@ -275,7 +282,6 @@ a.directory:link:active, a:visited:active {
 	border-color:white;
 	border-style:double;
 	z-index:0;
-	text-shadow: -1px -1px 0 1px -1px 0 -1px 1px 0 1px 1px 0;
 
 }
 
@@ -294,6 +300,15 @@ a.directory:link:active, a:visited:active {
 
 .Experience {
 	background-color:#002e2e;
+	font-size:17px;
+}
+
+.active {
+	color:#0047af;
+}
+
+.active-skill {
+	display:inline-block !important;
 }
 
 /* Projects Styling */
@@ -350,7 +365,6 @@ a.directory:link:active, a:visited:active {
 	background-image:url('pics/rocket_ship.png');
 	background-size:auto auto;
 	height:auto;min-height:93vh;
-	max-height:background-size;
 	transition-duration:.5s;
 }
 
@@ -392,7 +406,7 @@ a.directory:link:active, a:visited:active {
 }
 
 
-@media only screen and (max-width: 883px) { 
+@media only screen and (max-width: 935px) { 
 
 
 
@@ -417,6 +431,25 @@ a.directory:link:active, a:visited:active {
 	max-width:60%;
 }
 
+.Experience {
+	display:block;
+	float:none !important;
+}
+
+.active {
+}
+
+.skill-image-cont {
+	width:60% !important;
+	margin-left:20% !important;
+	float:none;
+	text-align:none;
+}
+
+.skill-pic {
+	width:80% !important;
+}
+
 
 .About .about-container .content {
 	float:none !important;
@@ -426,13 +459,17 @@ a.directory:link:active, a:visited:active {
 	padding:0 !important;
 }
 
+.project-container ul {
+	margin-top:-10px !important;
+	width:70% !important;
+}
+
 .Contact {
 	margin-bottom:-10px;
 	display:block;
 	background-image:url('pics/light_spectrum.png');
 	background-size:auto auto;
 	height:auto;min-height:93vh;
-	max-height:background-size;
 	transition-duration: .5s;
 }
 
