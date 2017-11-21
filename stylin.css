@@ -364,7 +364,7 @@ a.directory:link:active, a:visited:active {
 	display:inline-block;
 	background-image:url('pics/rocket_ship.png');
 	background-size:auto auto;
-	height:auto;min-height:85vh;
+	height:auto;min-height:90vh;
 	transition-duration:.5s;
 }
 
